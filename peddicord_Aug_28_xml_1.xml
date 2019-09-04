@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recipe type="bread" name="countryLoaf">
+    <heading label="servings">SERVINGS:</heading> Tested size: <measure unit="servings" n="10"
+        >10</measure>-<measure unit="servings" n="12">12 servings</measure>; makes one <measure
+        unit="ounces" n="11">11-ounce</measure> loaf <measure unit="slices" n="10">10</measure> to
+        <measure unit="slices" n="12">12 slices</measure>
+    <list type="ingred">
+        <heading label="ingred">INGREDIENTS</heading>
+        <item type="ingred" n="1"><measure unit="cups" n="1.25">1 1/4 cups</measure> (<measure
+                unit="grams" n="160">160 grams</measure>) white bread flour, plus more for
+            dusting</item>
+        <item type="ingred" n="2"><measure unit="cups" n="1/4">1/4 cup</measure> (<measure
+                unit="grams" n="38">38 grams</measure>) stone-ground whole-wheat flour</item>
+        <item type="ingred" n="3"><measure unit="cups" n="1/4">1/4 cup</measure> (<measure
+                unit="grams" n="32">32 grams</measure>) stone-ground whole rye flour</item>
+        <item type="ingred" n="4"><measure unit="teaspoons" n="1/2">1/2 teaspoon</measure> instant
+            yeast or bread machine yeast</item>
+        <item type="ingred" n="5">
+            <measure unit="teaspoons" n="1">1 teaspoon</measure> table salt</item>
+        <item type="ingred" n="6"><measure unit="teaspoons" n="1/4">1/4 cup</measure> (<measure
+                unit="grams" n="55">55 grams</measure>) dry fermented cider (may substitute Pilsener
+            beer; see headnote)</item>
+        <item type="ingred" n="7"><measure unit="cups" n="1/2">1/2 cup</measure> (<measure
+                unit="grams" n="120">120 grams</measure>) lukewarm water (<temp
+                unit="degreesFahrenheit" n="80">80 degrees</temp>), plus an optional <measure
+                unit="tablespoons" n="1">1 tablespoon</measure></item>
+    </list>
+    <list type="directions">
+        <heading label="directions">DIRECTIONS </heading>
+        <step n="1">Whisk together the <ingred type="dry">flours</ingred>, <ingred type="dry"
+                >yeast</ingred> and <ingred type="dry">salt</ingred> in a <equip>mixing
+            bowl</equip>. Combine the <ingred type="wet">cider</ingred> and <ingred type="wet"
+                >water</ingred> in a <equip>liquid measuring cup</equip>.</step>
+        <step n="2">Add the <ingred type="wet">liquid</ingred> to the <ingred type="dry"
+                >flour</ingred> mixture; use a <equip>spatula</equip> or <equip>bench
+                scraper</equip> or your <equip>hand moistened with water</equip> to blend them for
+            about a minute. The dough should be shaggy yet cohesive. Cover the <equip>bowl</equip>
+            with a <equip>towel</equip>; let the dough rest for <time unit="minutes" n="20">20
+                minutes</time>.</step>
+        <step n="3">Moisten your <equip>kneading hand</equip>. If the dough seems stiff, add the
+            optional tablespoon of <ingred type="wet">water</ingred>. Stretch one edge of the dough
+            (still in the <equip>bowl</equip>), then press it into the center of the
+                <equip>bowl</equip>. Repeat this about a dozen times, moving clockwise to catch all
+            sides of the dough. (This should take <time unit="minutes" n="1">1</time> or <time
+                unit="minutes" n="2">2 minutes</time>.)</step>
+        <step n="4">Turn the dough over so the seams are on the bottom. Cover and let rest for <time
+                unit="minutes" n="20">20 minutes</time>. Repeat the clockwise stretching and folding
+            two more times, with <time unit="minutes" n="20">20-minute</time> rests after each.
+            Cover and refrigerate at least <time unit="hours" n="8">8 hours</time> and up to <time
+                unit="hours" n="24">24 hours</time>. The dough should have doubled. If it hasn't,
+            leave it on the counter until it does. </step>
+        <step n="5">Lightly <ingred type="dry">flour</ingred> a work surface. Use a <equip>pastry
+                cloth</equip> or clean <equip>dish towel</equip> to line a round
+                <equip>colander</equip>. Dust the <equip>cloth</equip> with <ingred type="dry"
+                >flour</ingred>. </step>
+        <step n="6">Transfer the dough to the floured work surface. Fold the edges toward the center
+            to create a round shape, turning it over so the seams are on the bottom. Let it rest for
+                <time unit="minutes" n="5">5 minutes</time>, then transfer to the colander, seam
+            side up. Cover with a <equip>towel</equip> and let the dough rise for <time unit="hours"
+                n="1.5">1 1/2 hours</time>. </step>
+        <step n="7"><time unit="minutes" n="30">Thirty minutes</time> before baking, place a
+                <equip>cast-iron Dutch oven</equip> (lid on) or enameled <equip>cast-iron
+                pot</equip> with a lid (on) in the oven; preheat to <temp unit="degreesFahrenheit"
+                n="475">475 degrees</temp>. </step>
+        <step n="8">Carefully remove the hot <equip>pot</equip> from the <equip>oven</equip>. </step>
+        <step n="9">Turn the dough out onto the counter so the seams are on the bottom. Use
+                <equip>kitchen scissors</equip> to make 8 snips on the top of the dough in an evenly
+            spaced spoke pattern, each about <measure unit="inches" n="1/4">1/4-inch</measure> deep.
+            Lift the dough and carefully drop it into the hot <equip>pot</equip>. Immediately cover
+            with the hot <equip>lid</equip>. Bake for <time unit="minutes" n="30">30 minutes</time>,
+            then reduce the heat to <temp unit="degreesFahrenheit" n="450">450 degrees</temp>.
+            Uncover and bake for <time unit="minutes" n="8">8</time> to <time unit="minutes" n="10"
+                >10 minutes</time> or until the crust is dark brown. Try to minimize the amount of
+            time the <equip>oven door</equip> is open. </step>
+        <step n="10">The bread is done when its internal temperature registers <temp
+                unit="degreesFahrenheit" n="205">205 degrees</temp> on an <equip>instant-read
+                thermometer</equip> and the loaf sounds hollow when knocked on the underside. </step>
+        <step n="11">Transfer the loaf to a <equip>wire rack</equip> to cool for at least <time
+                unit="hours" n="1">1 hour</time> before cutting. </step>
+    </list>
+</recipe>
