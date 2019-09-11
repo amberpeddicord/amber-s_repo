@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="peddicord_schema_xml_2_letter.rnc" type="application/relax-ng-compact-syntax"?>
+<letter author="Joshua_Coffin">
+    <introduction><person id="JC">Coffin</person>, a member of the <organization id="AASS">American
+            Anti-Slavery Society</organization>, writes to <occupation type="author"
+            >author</occupation> and <occupation type="abolitionist">abolitionist</occupation>
+        <person id="LMC" occupation="abolitionist author">Lydia Maria Child</person> about <person
+            id="HJ" occupation="author abolitionist reformer">Harriet Jacobs</person>. <quote>"I
+            hope you will call &amp; see, if she is now in <location type="city" id="philadelphia?"
+                >the city</location>, one of the most interesting cases of escape from slavery that
+            you have ever seen."</quote>
+    </introduction>
+    <dateline>
+        <location type="city" id="philadelphia">Phila.</location>
+        <date when="25-06-1842">25 June 1842</date>
+    </dateline>
+    <tagline>Esteemed Friend,</tagline>
+    <body>... I hope you will call &amp; see, if she is now in <location type="city"
+            id="philadelphia">the city</location>, one of the most interesting cases of escape from
+        slavery that you have ever seen. She was sent from <location type="city" id="philadelphia"
+            >this city</location>
+        <date when="24-06-1842">yesterday</date>
+        <time when="morning">morning</time> &amp; consigned to <person id="Mr._J">Mr.
+            Johnston</person>. She is from <location type="state" id="North_Carolina"
+            >N.C.</location> was brought away by a <person id="id_unknown" occupation="sea_captain"
+            >sea captain.</person> She was sold by her <person id="id_unknown"
+            occupation="slaveowner">master</person> to the speculators &amp; to avoid being sent
+        away she was hidden for <time_elapse unit="years" n="7">7 years</time_elapse>! in a small
+        upper room of a house occupied by colored people &amp; within <distance unit="yards" n="100"
+            >a hundred yards</distance> of her master's house, who did not know she was there. She
+        had not seen <person id="id_unknown">her boy</person>, for <time_elapse unit="years" n="7">7
+            years</time_elapse> till within <time_elapse unit="days" n="3">3 days</time_elapse> of
+        her coming away. She has been shut up so long that she can hardly walk. <person
+            id="id_unknown">Another woman</person> was brought away from <location type="state"
+            id="Delaware">Delaware</location>, who was found tied to a tree. If <person id="Mr._J"
+            >Mr. Johnston</person> was the man he ought to be, he would invite you occasionally to
+        see some of these remarkable cases, which are continually passing from <location type="city"
+            id="philadelphia">Phil.</location> to <location type="state" id="New_York"
+            >N.Y.</location>
+        <mark type="strikethrough">The Vagrant</mark> what a queer mistake. <organization
+            id="The_Vigilance_Committee">The Vigilance Committee</organization> of <location
+            type="city" id="philadelphia">this city</location> are doing a fine business in
+        weakening &amp; delapidating the edifice of slavery. Success to them... </body>
+    <signature>Joshua Coffin</signature>
+    <citation>Citation: <object type="autograph_letter">Autograph letter</object>, signed;
+            <organization id="Anti-Slavery_Collection">Anti-Slavery Collection</organization>,
+            <organization id="Boston_Public_Library" location="Boston">Boston Public
+            Library</organization>; <title type="book">Lydia Maria Child Papers, The Collected
+            Correspondence of Lydia Maria Child</title>, <date unit="years" n="1817"
+            >1817</date>-<date unit="years" n="1880">1880</date>, ed. <person
+            id="Patricia_G_Holland" occupation="editor">Patricia G. Holland</person> and <person
+            id="Milton_Meltzer" occupation="editor">Milton Meltzer</person>. <location type="city"
+            id="Millwood">Millwood</location>, <location type="state" id="New_York">N.Y.</location>:
+            <company type="unknown?" id="Kraus_Microfilm">Kraus Microfilm</company>, <date
+            year="1980">1980</date>. <volume n="14">14</volume>:389— 4 </citation>
+</letter>
