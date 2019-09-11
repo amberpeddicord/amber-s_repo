@@ -1,0 +1,23 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+start = letter
+letter = element letter {to, from, dateline, salutation, body, closing}
+to = attribute to {"LAD"}
+from = attribute from {"Oscar_Wilde"}
+
+dateline = element dateline {date, letterLocation, text}
+date = attribute date {xsd:date | xsd:gYearMonth | xsd:gYear}
+letterLocation = attribute letterLocation {"Babbacombe_Cliff"}
+salutation = element salutation {id, text}
+id = attribute id {"My_Own_Boy" | "Hyacinthus" | "Apollo" | "LAD"}
+
+body = element body {mixed{(location | person | color | time)*}}
+location = element location {where, text}
+where = attribute where {"Babbacombe_Cliff" | "Greece" | "Salisbury" | "London"}
+person = element person {id, text}
+color = element color {hue, text}
+hue = attribute hue {"red" | "grey"}
+time = element time {when, text}
+when= attribute when {"twilight" | text}
+
+closing = element closing {text}
+
