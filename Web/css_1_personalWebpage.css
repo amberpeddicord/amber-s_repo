@@ -1,0 +1,27 @@
+html {
+background-color: #ffff99;
+color: black;
+font-family: courier, fixed, monospace}
+
+h1 {
+text-align: center;
+}
+h2 {
+    text-align: center
+}
+#left {
+    float: left;    
+}
+#github {
+    text-align: center
+}
+#bio {
+    color: black;
+    text-align: center;
+    float: right
+}
+img {
+float: left;
+    border: 2px black;
+    
+}
