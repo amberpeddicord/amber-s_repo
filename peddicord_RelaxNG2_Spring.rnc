@@ -1,0 +1,32 @@
+datatypes xsd = "http://www.w3.org/2001/XMLSchema-datatypes"
+
+start = letter
+letter = element letter {metadata, greeting, body, closing}
+
+metadata = element metadata {background, date, location}
+background = element background {text}
+date = element date{when, text}
+when = attribute when {xsd:date | xsd:gYearMonth}
+location = element location {where, text}
+where = attribute where {"London" | "Thames" | "Salisbury"}
+
+greeting = element greeting{to, text}
+to = attribute to {"LAD"}
+
+body = element body{mixed{(color | persRef | note | placeRef | money | occupation)+}}
+color = element color{which, text}
+which = attribute which{"red" | "yellow"}
+persRef = element persRef {who, text}
+who = attribute who{"LAD"}
+note = element note {resp, text}
+resp = attribute resp{"DOL"}
+placeRef = element placeRef{where, text}
+money = element money {unit?, amount?, text}
+unit = attribute unit {"pounds"}
+amount = attribute amount{xsd:integer}
+occupation = element occupation{type, text}
+type = attribute type{"renter"}
+
+closing = element closing{from, text}
+from = attribute from{"OW"}
+

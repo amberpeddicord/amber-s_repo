@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="peddicord_RelaxNG2_Spring.rnc" type="application/relax-ng-compact-syntax"?>
+<letter>
+    <metadata>
+        <background>The following letter was read by defense attorney Edward Carson during his
+            cross-examination of Oscar Wilde in his libel trial. Carson had asked Wilde to read the
+            letter, but he declined.</background>
+        <date when="1893-03">March 1893,</date>
+        <location where="London">Savoy Hotel</location>
+    </metadata>
+    <greeting to="LAD">Dearest of All Boys,</greeting>
+    <body>Your letter was delightful, <color which="red">red</color> and <color which="yellow"
+            >yellow</color> wine to me; but I am sad and out of sorts. <persRef who="LAD"
+            >Bosie</persRef>, you must not make scenes with me. They kill me, they wreck the
+        loveliness of life. I cannot see you, so Greek and gracious, distorted with passion. I
+        cannot listen to your curved lips saying hideous things to me. I would sooner be blackmailed
+        by every <occupation type="renter">renter</occupation>
+        <note resp="DOL">["renter"was a slang term for male prostitutes]</note> in London than to
+        have you bitter, unjust, hating.You are the divine thing I want, the thing of grace and
+        beauty; but I don't know how to do it.Shall I come to <placeRef where="Salisbury"
+            >Salisbury</placeRef>? My <money unit="pounds" amount="49">bill here is 49
+            pounds</money> for a week. I have also got a new sitting-room over the Thames. Why are
+        you not here, my dear, my wonderful boy? I fear I must leave; <money>no money</money>,
+            <money>no credit</money>, and a heart of lead.</body>
+    <closing from="OW">Your own, Oscar</closing>
+</letter>
