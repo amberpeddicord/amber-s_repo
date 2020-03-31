@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/earthquakes_1.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[37.08241675133542,-123.14688192777223],[38.171741302788476,-121.49830319007145]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        var layer_OpenStreetMap_0 = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_OpenStreetMap_0;
+        map.addLayer(layer_OpenStreetMap_0);
+        function pop_earthquakes_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['I_D'] !== null ? Autolinker.link(feature.properties['I_D'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FLAG_TSUNAMI'] !== null ? Autolinker.link(feature.properties['FLAG_TSUNAMI'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['YEAR'] !== null ? Autolinker.link(feature.properties['YEAR'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MONTH'] !== null ? Autolinker.link(feature.properties['MONTH'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DAY'] !== null ? Autolinker.link(feature.properties['DAY'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['HOUR'] !== null ? Autolinker.link(feature.properties['HOUR'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MINUTE'] !== null ? Autolinker.link(feature.properties['MINUTE'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SECOND'] !== null ? Autolinker.link(feature.properties['SECOND'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['FOCAL_DEPTH'] !== null ? Autolinker.link(feature.properties['FOCAL_DEPTH'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EQ_PRIMARY'] !== null ? Autolinker.link(feature.properties['EQ_PRIMARY'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EQ_MAG_MW'] !== null ? Autolinker.link(feature.properties['EQ_MAG_MW'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EQ_MAG_MS'] !== null ? Autolinker.link(feature.properties['EQ_MAG_MS'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EQ_MAG_MB'] !== null ? Autolinker.link(feature.properties['EQ_MAG_MB'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EQ_MAG_ML'] !== null ? Autolinker.link(feature.properties['EQ_MAG_ML'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EQ_MAG_MFA'] !== null ? Autolinker.link(feature.properties['EQ_MAG_MFA'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['EQ_MAG_UNK'] !== null ? Autolinker.link(feature.properties['EQ_MAG_UNK'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['INTENSITY'] !== null ? Autolinker.link(feature.properties['INTENSITY'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['COUNTRY'] !== null ? Autolinker.link(feature.properties['COUNTRY'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['STATE'] !== null ? Autolinker.link(feature.properties['STATE'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LOCATION_NAME'] !== null ? Autolinker.link(feature.properties['LOCATION_NAME'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LATITUDE'] !== null ? Autolinker.link(feature.properties['LATITUDE'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['LONGITUDE'] !== null ? Autolinker.link(feature.properties['LONGITUDE'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['REGION_CODE'] !== null ? Autolinker.link(feature.properties['REGION_CODE'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DEATHS'] !== null ? Autolinker.link(feature.properties['DEATHS'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DEATHS_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['DEATHS_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MISSING'] !== null ? Autolinker.link(feature.properties['MISSING'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MISSING_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['MISSING_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['INJURIES'] !== null ? Autolinker.link(feature.properties['INJURIES'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['INJURIES_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['INJURIES_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DAMAGE_MILLIONS_DOLLARS'] !== null ? Autolinker.link(feature.properties['DAMAGE_MILLIONS_DOLLARS'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DAMAGE_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['DAMAGE_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['HOUSES_DESTROYED'] !== null ? Autolinker.link(feature.properties['HOUSES_DESTROYED'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['HOUSES_DESTROYED_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['HOUSES_DESTROYED_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['HOUSES_DAMAGED'] !== null ? Autolinker.link(feature.properties['HOUSES_DAMAGED'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['HOUSES_DAMAGED_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['HOUSES_DAMAGED_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_DEATHS'] !== null ? Autolinker.link(feature.properties['TOTAL_DEATHS'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_DEATHS_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['TOTAL_DEATHS_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_MISSING'] !== null ? Autolinker.link(feature.properties['TOTAL_MISSING'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_MISSING_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['TOTAL_MISSING_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_INJURIES'] !== null ? Autolinker.link(feature.properties['TOTAL_INJURIES'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_INJURIES_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['TOTAL_INJURIES_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_DAMAGE_MILLIONS_DOLLARS'] !== null ? Autolinker.link(feature.properties['TOTAL_DAMAGE_MILLIONS_DOLLARS'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_DAMAGE_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['TOTAL_DAMAGE_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_HOUSES_DESTROYED'] !== null ? Autolinker.link(feature.properties['TOTAL_HOUSES_DESTROYED'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_HOUSES_DESTROYED_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['TOTAL_HOUSES_DESTROYED_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_HOUSES_DAMAGED'] !== null ? Autolinker.link(feature.properties['TOTAL_HOUSES_DAMAGED'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['TOTAL_HOUSES_DAMAGED_DESCRIPTION'] !== null ? Autolinker.link(feature.properties['TOTAL_HOUSES_DAMAGED_DESCRIPTION'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_earthquakes_1_0() {
+            return {
+                pane: 'pane_earthquakes_1',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(4,0,254,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_earthquakes_1');
+        map.getPane('pane_earthquakes_1').style.zIndex = 401;
+        map.getPane('pane_earthquakes_1').style['mix-blend-mode'] = 'normal';
+        var layer_earthquakes_1 = new L.geoJson(json_earthquakes_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_earthquakes_1',
+            layerName: 'layer_earthquakes_1',
+            pane: 'pane_earthquakes_1',
+            onEachFeature: pop_earthquakes_1,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_earthquakes_1_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_earthquakes_1);
+        map.addLayer(layer_earthquakes_1);
+        setBounds();
+        </script>
+    </body>
+</html>
